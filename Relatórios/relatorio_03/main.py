@@ -1,8 +1,17 @@
 from database import Database
 from helper.writeAJson import writeAJson
+from pokedex import Pokedex
 
 db = Database(database="pokedex", collection="pokemons")
 # db.resetDatabase()
+
+pokedex = Pokedex(db)
+
+pokedex.primeiraBusca()
+pokedex.segundaBusca()
+pokedex.terceiraBusca()
+pokedex.quartaBusca()
+pokedex.quintaBusca()
 
 # Busca 1: busca pelo Rattata
 #def getPokemonByName(name: str):
@@ -18,10 +27,10 @@ db = Database(database="pokedex", collection="pokemons")
 #writeAJson(pokemons, "Normal sem multiplicador com apenas 1 fraqueza")
 #--------------------------------------------------
 
-# Busca 3: busca por pokemon fraco contro grama ou gelo com apenas 1 fraqueza com chance de spawn entre 0.05 e 0.15
+# Busca 3: busca por pokemon fraco contra grama ou gelo com apenas 1 fraqueza com chance de spawn entre 0.05 e 0.15
 #fraquezas = ["Grass", "Ice"]
 #pokemons = db.collection.find({ "weaknesses": {"$in": fraquezas}, "weaknesses": {"$size": 1}, "spawn_chance": {"$gt":0.05, "$lt": 0.15} })
-#writeAJson(pokemons, "Fraco contro grama ou gelo com apenas 1 fraqueza com chance de spawn entre 0.05 e 0.15")
+#writeAJson(pokemons, "Fraco contra grama ou gelo com apenas 1 fraqueza com chance de spawn entre 0.05 e 0.15")
 #--------------------------------------------------
 
 # Busca 4: busca por pokemon do tipo dragão ou fogo que não tenha mais evolução
